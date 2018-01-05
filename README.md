@@ -1,5 +1,5 @@
 # Qt3D-OfflineRenderer
-This project is based on the Qt 3D basic shapes C++ example.
+This project is based on the Qt 3D basic shapes C++ example (https://doc.qt.io/qt-5.10/qt3d-basicshapes-cpp-example.html).
 
 It renders the whole scene using a QOffscreenSurface offline and displays the image in a QLabel.
 To get the image to resize adjust the OffscreenEngines rendering size on resize of the widget.
