@@ -29,17 +29,6 @@ OffscreenSurfaceFrameGraph::OffscreenSurfaceFrameGraph(Qt3DCore::QNode* parent, 
 
     cameraSelector = new Qt3DRender::QCameraSelector(viewport);
     cameraSelector->setCamera(camera);
-/*
-    cameraSelector = new Qt3DRender::QCameraSelector(clearBuffers);
-    cameraSelector->setCamera(camera);
-    */
-
-    // Set the viewport for the render target selector so that it knows
-    // what to draw
-    /*
-    viewport = new Qt3DRender::QViewport(clearBuffers);
-    viewport->setNormalizedRect(QRectF(0.0, 0.0, 1.0, 1.0));
-    */
 }
 
 void OffscreenSurfaceFrameGraph::setSize(const QSize &size) {
@@ -48,5 +37,5 @@ void OffscreenSurfaceFrameGraph::setSize(const QSize &size) {
 }
 
 Qt3DCore::QNode *OffscreenSurfaceFrameGraph::getLastNode() {
-    return renderTargetSelector;
+    return cameraSelector;
 }

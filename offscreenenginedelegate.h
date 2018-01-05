@@ -17,6 +17,7 @@ private:
     OffscreenEngine *engine;
     QLabel *label;
     Qt3DRender::QRenderCaptureReply *reply;
+    int numberOfRenderedImages = 0;
 
 private slots:
     void onImageRendered();

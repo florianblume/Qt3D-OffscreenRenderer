@@ -8,7 +8,11 @@ OffscreenEngineDelegate::OffscreenEngineDelegate(OffscreenEngine *engine, QLabel
 }
 
 void OffscreenEngineDelegate::onImageRendered() {
-    label->setPixmap(QPixmap::fromImage(reply->image()));
+    QImage image = reply->image();
+    label->setPixmap(QPixmap::fromImage(image));
+    if (numberOfRenderedImages == 1)
+        reply->saveImage("test.png");
+    numberOfRenderedImages++;
     disconnect(reply, SIGNAL(completed()), this, SLOT(onImageRendered()));
     delete reply;
     reply = engine->getRenderCapture()->requestCapture();
