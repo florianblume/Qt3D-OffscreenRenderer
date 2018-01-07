@@ -8,6 +8,24 @@ I guess the rest should be self-explanatory.
 This is supposed to show how to construct an offline framegraph and save everyone who needs such
 a renderer the hours of trial and error and the despair I encountered.
 
+## The framegraph
+
+                                root
+                                 |
+                            renderSettings
+                                 |
+                         renderSurfaceSelector
+                                 |
+                          renderTargetSelector
+                                 |
+             ---------------------------------------
+             |                   |                 |
+        renderTarget        clearBuffers        viewport
+             |                                     |
+     renderTargetOutput                      cameraSelector
+             |
+         texture2D
+
 ## Note
 
 Somehow the first image that is captured is blank and without rendered objects. I suspected the problem
