@@ -33,8 +33,9 @@ to be that the render capture was triggered right after the clear buffers node. 
 to have any effect when we place the capture node anywhere else. So basically the first image has to
 be skipped.
 
-To incorporate depth there is some inspiration in https://github.com/alpqr/q3dpostproc. Probably one has
-to add another RenderTargetOutput that stores the depth values and add a QDepthTest node to the framegraph.
+To enable depth tests just add a QRenderStateSet as a child to the camera selector and a QDepthTest as a child to the render state set and add it as a state. Then, in the render target add a texture to the depth attatchment point. This is it.
+
+I experiemented with multisampling, and added a QMultiSampleAntiAliasing render state to the render state set and instead of adding a QTexture2D used a QMultisampleTexture2D but it gave me version errors with OpenGL. If maybe someone gets it running they can fork the project and I can then do a pull.
 
 # Disclaimer
 
