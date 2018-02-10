@@ -63,7 +63,7 @@ int main(int argc, char **argv)
     format.setSamples(8);
     QSurfaceFormat::setDefaultFormat(format);
 
-    // Create out top-level widget.
+    // Create our top-level widget.
     MainWidget widget;
     widget.show();
     widget.resize(1200, 800);
