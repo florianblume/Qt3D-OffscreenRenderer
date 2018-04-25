@@ -64,15 +64,17 @@
 #include <Qt3DExtras/QSphereMesh>
 #include <Qt3DExtras/QPhongMaterial>
 
+// Convenience class that wraps up the interactions between the UI and the shapes in the scene.
+// Signals from UI elements are connected directly to a SceneModifier object,
+// which shows or hides the relevant shape.
 class SceneModifier : public QObject
 {
     Q_OBJECT
-
 public:
     explicit SceneModifier(Qt3DCore::QEntity *rootEntity);
-    ~SceneModifier();
 
 public slots:
+    // The UI check boxes connect to these slots.
     void enableTorus(bool enabled);
     void enableCone(bool enabled);
     void enableCylinder(bool enabled);
@@ -81,6 +83,13 @@ public slots:
     void enableSphere(bool enabled);
 
 private:
+    // All the entities we manage.
+    // Note that this class doesn't own the entities here:
+    // the root entity is owned by the offscreen engine,
+    // and all other entities are children of the root
+    // (so will be destroyed when it is destroyed).
+    // Therefore, we don't need to worry about cleaning
+    // any of these up.
     Qt3DCore::QEntity *m_rootEntity;
     Qt3DExtras::QTorusMesh *m_torus;
     Qt3DCore::QEntity *m_coneEntity;

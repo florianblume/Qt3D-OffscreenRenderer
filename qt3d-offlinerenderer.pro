@@ -10,13 +10,15 @@ SOURCES += main.cpp \
     offscreenengine.cpp \
     offscreensurfaceframegraph.cpp \
     texturerendertarget.cpp \
-    offscreenenginedelegate.cpp
+    offscreenenginedelegate.cpp \
+    mainwidget.cpp
 
 HEADERS += \
     scenemodifier.h \
     offscreenengine.h \
     offscreensurfaceframegraph.h \
     texturerendertarget.h \
-    offscreenenginedelegate.h
+    offscreenenginedelegate.h \
+    mainwidget.h
 
 
