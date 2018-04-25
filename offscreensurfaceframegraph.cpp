@@ -4,9 +4,11 @@
  *
  *                 (1)| RenderTargetSelector |
  *                               |
- *             +=================+===================+-----------------+
- *             V                 V                   V                 V
- * (2)| ClearBuffers |  (3)| Viewport |  (4)| CameraSelector |         ?
+ *                      +=================+
+ *                      V                 V
+ *              (2)| ClearBuffers |  (3)| Viewport |
+ *                                           V
+ *                                  (4)| CameraSelector |
  *
  * To summarise the Qt3D documentation, the frame graph is processed in depth-first order.
  * Each node sets some state. Therefore you can read the graph as saying:
@@ -20,6 +22,10 @@
  * Further children can be added to the render target selector in order to perform subsequent
  * actions. In this example project, the offscreen engine adds a render capture node after
  * the existing children in the frame graph.
+ *
+ * An example extension of the framegraph can be the one that draws an image in the background:
+ *
+ *      https://github.com/Sonnentierchen/Qt3D-BackgroundImage
  */
 
 OffscreenSurfaceFrameGraph::OffscreenSurfaceFrameGraph(Qt3DCore::QNode* parent, Qt3DRender::QCamera *camera, const QSize &size) :
