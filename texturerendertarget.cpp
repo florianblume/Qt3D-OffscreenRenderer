@@ -14,7 +14,7 @@ TextureRenderTarget::TextureRenderTarget(Qt3DCore::QNode *parent, const QSize &s
     // Create a texture to render into.
     texture = new Qt3DRender::QTexture2D(output);
     texture->setSize(size.width(), size.height());
-    texture->setFormat(Qt3DRender::QAbstractTexture::RGBA8_UNorm);
+    texture->setFormat(Qt3DRender::QAbstractTexture::RGB8_UNorm);
     texture->setMinificationFilter(Qt3DRender::QAbstractTexture::Linear);
     texture->setMagnificationFilter(Qt3DRender::QAbstractTexture::Linear);
 
