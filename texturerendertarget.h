@@ -17,6 +17,7 @@ public:
 
     void setSize(const QSize &size);
     QSize getSize() { return size; }
+    Qt3DRender::QTexture2D* getTexture();
 
 private:
     QSize size;
