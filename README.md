@@ -8,6 +8,10 @@ I guess the rest should be self-explanatory.
 This is supposed to show how to construct an offline framegraph and save everyone who needs such
 a renderer the hours of trial and error and the despair I encountered.
 
+## Qt version
+
+Make sure to use Qt >= 5.9.2 due to a bug in earlier versions: https://bugreports.qt.io/browse/QTBUG-61382
+
 ## The framegraph
 
                                 root
