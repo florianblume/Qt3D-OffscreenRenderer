@@ -1,4 +1,11 @@
 # Qt3D-OffscreenRenderer
+
+---
+
+*Note:* If you want to use the offscreen renderer in your project to embedd Qt3D without having to use `Qt3DWindow`, checkout my [implementation of a Qt3DWidget](https://github.com/florianblume/qt3d-widget). It renders everything offline and uses the offscreen texture to paint a quad in a `QOpenGLWidget`.
+
+---
+
 This project is based on the Qt 3D basic shapes C++ example (https://doc.qt.io/qt-5.10/qt3d-basicshapes-cpp-example.html).
 
 It renders the whole scene using a QOffscreenSurface offline and displays the image in a QLabel.
