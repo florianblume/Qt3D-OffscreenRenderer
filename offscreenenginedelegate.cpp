@@ -1,5 +1,7 @@
 #include "offscreenenginedelegate.h"
 
+#include <QTimer>
+
 OffscreenEngineDelegate::OffscreenEngineDelegate(OffscreenEngine *engine, QLabel *label) :
     engine(engine),
     label(label),
@@ -8,7 +10,7 @@ OffscreenEngineDelegate::OffscreenEngineDelegate(OffscreenEngine *engine, QLabel
     // Immediately request a render capture.
     // Every time we receive a reply, we then
     // re-request a new capture.
-    requestRenderCapture();
+    QTimer::singleShot(200, this, &OffscreenEngineDelegate::requestRenderCapture); // Rendering MUST called after QApplication::exec() call
 }
 
 OffscreenEngineDelegate::~OffscreenEngineDelegate()

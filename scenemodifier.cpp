@@ -109,9 +109,11 @@ SceneModifier::SceneModifier(Qt3DCore::QEntity *rootEntity)
 
     // CylinderMesh Transform
     Qt3DCore::QTransform *cylinderTransform = new Qt3DCore::QTransform();
-    cylinderTransform->setScale(1.5f);
-    cylinderTransform->setRotation(QQuaternion::fromAxisAndAngle(QVector3D(1.0f, 0.0f, 0.0f), 45.0f));
-    cylinderTransform->setTranslation(QVector3D(-5.0f, 4.0f, -1.5));
+    cylinderTransform->setScale(1.0f);
+    cylinderTransform->setRotationX(13);
+    cylinderTransform->setRotationY(-6);
+    cylinderTransform->setRotationZ(-1);
+    cylinderTransform->setTranslation(QVector3D(0.0f, 0.0f, 0.0));
 
     Qt3DExtras::QPhongMaterial *cylinderMaterial = new Qt3DExtras::QPhongMaterial();
     cylinderMaterial->setDiffuse(QColor(QRgb(0x928327)));
