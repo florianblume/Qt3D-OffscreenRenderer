@@ -32,7 +32,7 @@ OffscreenEngine::OffscreenEngine(Qt3DRender::QCamera *camera, const QSize &size)
     // This is set as the next child of the render target selector node,
     // so that the capture will be taken from the specified render target
     // once all other rendering operations have taken place.
-    renderCapture = new Qt3DRender::QRenderCapture(offscreenFrameGraph->getRenderTargetSelector());
+    renderCapture = new Qt3DRender::QRenderCapture(camera);
 
     // Set the root entity of the engine. This causes the engine to begin running.
     aspectEngine->setRootEntity(root);
@@ -63,7 +63,7 @@ void OffscreenEngine::setSceneRoot(Qt3DCore::QNode *sceneRoot)
 
     // Parent the incoming scene root to our current root entity.
     this->sceneRoot = sceneRoot;
-    this->sceneRoot->setParent(aspectEngine->rootEntity().data());
+    this->sceneRoot->setParent(offscreenFrameGraph->getCameraSelector());
 }
 
 Qt3DRender::QRenderCapture* OffscreenEngine::getRenderCapture()

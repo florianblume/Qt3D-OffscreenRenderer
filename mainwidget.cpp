@@ -38,10 +38,6 @@ MainWidget::MainWidget(QWidget *parent) : QWidget(parent)
     lightTransform->setTranslation(cameraEntity->position());
     lightEntity->addComponent(lightTransform);
 
-    // Allow the camera to be controlled.
-    Qt3DExtras::QFirstPersonCameraController *camController = new Qt3DExtras::QFirstPersonCameraController(rootEntity);
-    camController->setCamera(cameraEntity);
-
     // Create a SceneModifier, which connects UI elements to show or hide their respective shapes.
     // Given the root entity, the SceneModifier internally adds the respective shapes as children.
     modifier = new SceneModifier(rootEntity);
